@@ -23,12 +23,7 @@ float noise (in vec2 st) {
     float d = random(i + vec2(1.0, 1.0));
 
     // Smooth Interpolation
-
-    // Cubic Hermine Curve.  Same as SmoothStep()
     vec2 u = f*f*(3.0-2.0*f);
-    // u = smoothstep(0.,1.,f);
-
-    // Mix 4 coorners percentages
     return mix(a, b, u.x) +
             (c - a)* u.y * (1.0 - u.x) +
             (d - b) * u.x * u.y;
@@ -40,10 +35,13 @@ void main() {
 
     float strength = noise(pos * 2.0);
 
-    vec3 color1 = vec3(0.4118, 0.0039, 0.0039);
-    vec3 color2 = vec3(0.2745, 0.0, 0.0);
+    // Change the color to #2d4034 (RGB: 45, 64, 52)
+    vec3 color1 = vec3(0.1765, 0.2509, 0.2039); // #2d4034 normalized
+    // Change the white to a shade of green
+    vec3 color2 = vec3(0.8, 1.0, 0.8); // Light greenish-white
 
-    vec3 mixedColor = mix(color1, color2, strength);
+    // Adjust the mixing ratio to favor green more
+    vec3 mixedColor = mix(color1, color2, strength * 0.12); // Reduce white content to 12%
 
     gl_FragColor = vec4(mixedColor, 1.0);
 }
