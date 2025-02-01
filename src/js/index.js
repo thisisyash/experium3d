@@ -26,6 +26,8 @@ const loading = document.querySelector(".loading")
 const started = document.querySelector(".started")
 const startedBtn = document.querySelector(".started-btn")
 const viewMore = document.querySelector(".view-more")
+const ScrollIns = document.querySelector(".scroll-img")
+
 let touchValue = 1
 let videoLook = false
 let scrollI = 0.0
@@ -47,36 +49,36 @@ let detailsImage = [
     {
         url: "https://www.w3schools.com/html/mov_bbb.mp4",
         name: "Amphitheatre",
-        goTo:'https://experium.brandorigin.in/home/Amphitheatre'
+        goTo:'http://experiumbooking.brandorigin.in/home/Amphitheatre'
     },
     {
         url: "https://www.w3schools.com/html/mov_bbb.mp4",
         name: "Sculpture's",
-         goTo:'https://experium.brandorigin.in/home/Sculpture'
+         goTo:'http://experiumbooking.brandorigin.in/home/Sculpture'
     },  {
         url: "https://www.w3schools.com/html/mov_bbb.mp4",
         name: "Miracle Flower Garden",
-         goTo:'https://experium.brandorigin.in/home/MiracleFlowerGarden'
+         goTo:'http://experiumbooking.brandorigin.in/home/MiracleFlowerGarden'
     },
     {
         url: "https://www.w3schools.com/html/mov_bbb.mp4",
         name: "Japanese Garden",
-         goTo:'https://experium.brandorigin.in/home/JapaneseGarden'
+         goTo:'http://experiumbooking.brandorigin.in/home/JapaneseGarden'
     },
     {
         url: "https://www.w3schools.com/html/mov_bbb.mp4",
         name: "Rock garden",
-         goTo:'https://experium.brandorigin.in/home/RockGarden'
+         goTo:'http://experiumbooking.brandorigin.in/home/RockGarden'
     },
     {
         url: "https://www.w3schools.com/html/mov_bbb.mp4",
         name: "Cactus Garden",
-         goTo:'https://experium.brandorigin.in/home/CactusGarden'
+         goTo:'http://experiumbooking.brandorigin.in/home/CactusGarden'
     },
     {
         url: "https://www.w3schools.com/html/mov_bbb.mp4",
         name: "Palm garden",
-         goTo:'https://experium.brandorigin.in/home/PalmGardens'
+         goTo:'http://experiumbooking.brandorigin.in/home/PalmGardens'
     },
    
 ]
@@ -231,6 +233,11 @@ const continueAnimation = () => {
         groupText.visible = true
         isLoading = true
     }, 250);
+    setTimeout(() => {
+        anchor.style.visibility="visible"
+        ScrollIns.style.visibility="visible"
+    
+    }, 500);
 }
 
 const textureLoader = new THREE.TextureLoader(loadingManager)
@@ -546,6 +553,7 @@ const animationScroll = (e, touchEvent, value, downOrUp) => {
     if (touchEvent) deltaY = value
     else deltaY = e.deltaY
 
+    if(deltaY>0)  ScrollIns.style.visibility="hidden"
     if (videoLook === false && isLoading) {
         // Known up or down
         if (touchEvent && downOrUp === "down" && scrollI > 0) scrollI--

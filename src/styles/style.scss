@@ -44,18 +44,52 @@ header {
         z-index: 5;
     }
 }
+.scroll-img {
+    position: fixed; /* Keeps it in place regardless of scrolling */
+    left: 50%; /* Centers horizontally */
+    top: 35%; /* Centers vertically */
+    transform: translate(-50%, -50%); /* Perfectly centers it */
+    padding: 10px 20px;
+    font-size: 24px;
+    text-decoration: none;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: white; /* Example text color */
+    border-radius: 8px;
+    display: inline-block;
+    text-align: center;
+    visibility: hidden;
+}
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+.scroll-text {
+    font-size: 24px;
+    font-weight: bold;
+    color: white; /* Adjust color as needed */
+    text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.8); /* Soft glowing effect */
+    animation: blink 1.5s infinite ease-in-out; /* Slow blinking effect */
+    text-align: center;
+}
+
 
 .explore-more-btn{
-    position: absolute;
-    right: 44%;
-    bottom: 0;
-    padding:10px;
-    margin:10px;
-    font-size:medium;
+    position: fixed; /* Keeps it at the bottom regardless of scroll */
+    left: 50%; /* Move to the center */
+    bottom: 20px; /* Distance from the bottom */
+    transform: translateX(-50%); /* Adjust to perfectly center */
+    padding: 10px 20px;
+    font-size: 22px;    
+    text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.8); 
     text-decoration: none;
-    font-size: 24px;
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-
+    color: white; /* Example text color */
+    border-radius: 8px;
+    display: inline-block;
+    text-align: center;
+    visibility: hidden;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 .explore-more-btn:hover {
     transform: scale(1.1);
@@ -74,7 +108,7 @@ header {
     padding: 3px;
 }
 .logo-img{
-    width: 18vw;
+    width: 20rem;
 }
 
 .loading {
@@ -187,22 +221,40 @@ main {
                 transform: translate(-50%, -50%) rotate(-45deg);
             }
         }
-        .view-more{
+        .view-more {
             position: absolute;
-            bottom:0;
-           border: 2px solid white;
-           color:black;
-            border-radius: 10px;
-            right:45%;
-        padding:8px;
-        margin:8px;
-        background-color: rgb(166, 189, 174);
-        text-decoration: none;
+            bottom: 20px; /* Slightly above bottom for better visibility */
+            left: 50%; /* Centering horizontally */
+            transform: translateX(-50%); /* Perfectly center */
+            border: 2px solid white;
+            color: rgb(253, 253, 253);
+            border-radius: 15px;
+            padding: 10px 20px; /* Better padding for button shape */
+            background-color: rgb(95, 140, 111);
+            text-decoration: none;
+            display: inline-flex; /* Keeps text and icon in line */
+            align-items: center; /* Aligns icon properly */
+            gap: 10px; /* Adds spacing between text and icon */
+            font-size: 18px; /* Readable text */
+            font-weight: bold;
             z-index: 6;
+            transition: transform 0.3s ease, background-color 0.3s ease; /* Smooth hover effect */
+        
             &:hover {
-                transform: scale(1.05);
+             
+                background-color: rgb(30, 144, 87); /* Slightly darker on hover */
             }
         }
+        
+        .view-more svg {
+            width: 18px; /* Maintain width */
+            height: 18px;
+            fill: white; /* Match text color */
+            stroke: white; /* Add stroke for thickness */
+            stroke-width: 2.5; /* Increase thickness */
+            color:white
+        }
+        
     }
 }
 
