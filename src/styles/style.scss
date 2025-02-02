@@ -6,10 +6,15 @@
 }
 
 html, body {
-    max-height: 100vh;
-    max-width: 100vw;
-    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh; /* Ensures full height */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden; /* Prevents unwanted scrolling */
 }
+
 
 a {
     color: #fff;
@@ -20,7 +25,11 @@ a {
     top: 0;
     left: 0;
     outline: none;
+    width: 100vw;
+    height: 100vh;
 }
+
+
 
 header {
     position: absolute;
@@ -57,6 +66,7 @@ header {
     border-radius: 8px;
     display: inline-block;
     text-align: center;
+    opacity: 0.5;
     visibility: hidden;
 }
 @keyframes blink {
@@ -75,7 +85,7 @@ header {
 }
 
 
-.explore-more-btn{
+.explore-more-btn {
     position: fixed; /* Keeps it at the bottom regardless of scroll */
     left: 50%; /* Move to the center */
     bottom: 20px; /* Distance from the bottom */
@@ -90,10 +100,13 @@ header {
     text-align: center;
     visibility: hidden;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    transition: transform 0.3s ease-in-out; /* Smooth transition */
 }
+
 .explore-more-btn:hover {
-    transform: scale(1.1);
+    transform: translateX(-50%) scale(1.1); /* Keep it centered while scaling */
 }
+
 .explore-icon{
     text-align: center;
     padding: 2px;
@@ -131,6 +144,8 @@ header {
 }
 
 main {
+    width: 100%;
+    height: 100%;
     .started {
         position: absolute;
         top: 50%;
@@ -166,8 +181,7 @@ main {
     
     .player {
         position: absolute;
-        top: 0;
-        right: 0;
+     
         width: 100vw;
         height: 100vh;
         z-index: 5;
@@ -178,15 +192,17 @@ main {
     
         .player-source {
             position: absolute;
-            top: 50%;
+            top: 40%;
             left: 50%;
             transform: translate(-50%, -50%); 
-            width: 85vw;
-            height: 85vh;
+            width: 80vw;
+            height: 70vh;
             z-index: 6;
             object-fit: cover;
         }
-    
+    .main-webgl{
+        position: absolute;
+    }
         .player-close {
             position: absolute;
             width: 50px;
@@ -238,6 +254,7 @@ main {
             font-size: 18px; /* Readable text */
             font-weight: bold;
             z-index: 6;
+            margin-bottom: 80px;
             transition: transform 0.3s ease, background-color 0.3s ease; /* Smooth hover effect */
         
             &:hover {
