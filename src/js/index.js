@@ -47,36 +47,36 @@ let detailsImage = [
   
    
     {
-        url: "https://www.w3schools.com/html/mov_bbb.mp4",
+        url: "./10.mov",
         name: "Amphitheatre",
         goTo:'http://experiumbooking.brandorigin.in/home/Amphitheatre'
     },
     {
-        url: "https://www.w3schools.com/html/mov_bbb.mp4",
+        url: "./09.mov",
         name: "Sculpture's",
          goTo:'http://experiumbooking.brandorigin.in/home/Sculpture'
     },  {
-        url: "https://www.w3schools.com/html/mov_bbb.mp4",
+        url: "./06.mov",
         name: "Miracle Flower Garden",
          goTo:'http://experiumbooking.brandorigin.in/home/MiracleFlowerGarden'
     },
     {
-        url: "https://www.w3schools.com/html/mov_bbb.mp4",
+        url: "./07.mov",
         name: "Japanese Garden",
          goTo:'http://experiumbooking.brandorigin.in/home/JapaneseGarden'
     },
     {
-        url: "https://www.w3schools.com/html/mov_bbb.mp4",
+        url: "./05.mov",
         name: "Rock garden",
          goTo:'http://experiumbooking.brandorigin.in/home/RockGarden'
     },
     {
-        url: "https://www.w3schools.com/html/mov_bbb.mp4",
+        url: "./03.mov",
         name: "Cactus Garden",
          goTo:'http://experiumbooking.brandorigin.in/home/CactusGarden'
     },
     {
-        url: "https://www.w3schools.com/html/mov_bbb.mp4",
+        url: "./04.mov",
         name: "Palm garden",
          goTo:'http://experiumbooking.brandorigin.in/home/PalmGardens'
     },
@@ -242,13 +242,13 @@ const continueAnimation = () => {
 
 const textureLoader = new THREE.TextureLoader(loadingManager)
 
-const imagesLoad1 = textureLoader.load(`https://picsum.photos/200/300`)
-const imagesLoad2 = textureLoader.load(`https://picsum.photos/200/300`)
-const imagesLoad3 = textureLoader.load(`https://picsum.photos/200/300`)
-const imagesLoad4 = textureLoader.load("https://picsum.photos/200/300")
-const imagesLoad5 = textureLoader.load("https://picsum.photos/200/300")
-const imagesLoad6 = textureLoader.load("https://picsum.photos/200/300")
-const imagesLoad7 = textureLoader.load("https://picsum.photos/200/300")
+const imagesLoad1 = textureLoader.load(`./10_img.png`)
+const imagesLoad2 = textureLoader.load(`./palm.png`)
+const imagesLoad3 = textureLoader.load(`./ecopark.png`)
+const imagesLoad4 = textureLoader.load("./palm2.png")
+const imagesLoad5 = textureLoader.load("./palm3.png")
+const imagesLoad6 = textureLoader.load("./05_img.png")
+const imagesLoad7 = textureLoader.load("./01.png")
 // const imagesLoad8 = textureLoader.load("https://picsum.photos/200/300")
 // const imagesLoad9 = textureLoader.load("https://picsum.photos/200/300")
 // const imagesLoad10 = textureLoader.load("https://picsum.photos/200/300")
